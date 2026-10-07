@@ -124,11 +124,10 @@ export const projects = [
   {
     tag: "Full-stack · MCA",
     title: "Rapid Medico System",
-    // [CONFIRM: add "JWT-secured" and/or "Kafka for order events" if true]
     description:
-      "Online medicine-ordering platform. Users browse medicines, place and track orders; REST APIs for catalogue, cart and orders.",
-    tech: ["Spring Boot", "React", "MySQL"],
-    github: null, // [CONFIRM REPO URL]
+      "Online medicine-ordering platform. Users browse medicines, place and track orders; JWT-secured REST APIs for catalogue, cart and orders.",
+    tech: ["Spring Boot", "React", "MySQL", "JWT"],
+    github: null,
   },
   {
     tag: "Full-stack · MCA",
@@ -136,7 +135,7 @@ export const projects = [
     description:
       "Secure journaling application with user accounts and JWT-based authentication so users can only access their own entries.",
     tech: ["Spring Boot", "React", "MongoDB", "JWT"],
-    github: null, // [CONFIRM REPO URL]
+    github: null,
   },
   {
     tag: "Hackathon · ISRO BAH 2026",
@@ -174,10 +173,10 @@ export const education = [
   {
     period: "2020 – 2023",
     title: "Bachelor of Computer Applications (BCA)",
-    org: "Vivekananda Institute of Professional Studies, Pitampura, Delhi", // [CONFIRM EXACT COLLEGE NAME]
+    org: "Vivekananda Institute of Professional Studies, Pitampura, Delhi",
   },
   {
-    period: "Ongoing", // [CONFIRM START YEAR] e.g. "2025 – present"
+    period: "2026 – present",
     title: "Co-organiser, EA FC tournament community",
     org: "Leadership",
     detail:
