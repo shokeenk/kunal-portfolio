@@ -1,0 +1,66 @@
+/* Design tokens — change colours, fonts and spacing here. */
+:root {
+  color-scheme: light dark;
+
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --ink: #121826;
+  --muted: #5a6476;
+  --line: #dde2ea;
+  --accent: #0b7a62;
+  --accent-ink: #ffffff; /* text on accent */
+  --accent-tint: #e2f2ec;
+  --accent-strong: #08664f; /* hover */
+
+  /* High-contrast contact block */
+  --invert-bg: #121826;
+  --invert-ink: #f4f6f8;
+  --invert-muted: #b4bccb;
+  --invert-line: #2b3446;
+  --invert-accent: #4cc9a4;
+
+  /* Code card (dark in both themes) */
+  --code-bg: #0f1522;
+  --code-bar: #151d2d;
+  --code-line: #253049;
+  --code-text: #d6dce6;
+  --tok-key: #7dd3fc;
+  --tok-str: #5fd4ae;
+  --tok-num: #f5b971;
+  --tok-bool: #c9a7ff;
+  --tok-punct: #8f99ac;
+
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --maxw: 1120px;
+  --gutter: clamp(16px, 4vw, 32px);
+  --date-col: 240px;
+  --section-gap: clamp(72px, 10vw, 120px);
+  --radius: 4px;
+  --nav-h: 64px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e121b;
+    --surface: #151b27;
+    --ink: #e8ecf3;
+    --muted: #9aa4b6;
+    --line: #262f40;
+    --accent: #4cc9a4;
+    --accent-ink: #0e121b;
+    --accent-tint: #15322b;
+    --accent-strong: #6fd8b8;
+
+    --invert-bg: #e8ecf3;
+    --invert-ink: #0e121b;
+    --invert-muted: #4a5466;
+    --invert-line: #c9d0db;
+    --invert-accent: #0b7a62;
+
+    --code-bg: #0a0e16;
+    --code-bar: #111725;
+  }
+}

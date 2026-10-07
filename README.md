@@ -1,16 +1,28 @@
-# React + Vite
+# Kunal Shokeen — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+React + Vite single-page portfolio, deployed on Vercel at https://kunal-portfolio-ten.vercel.app.
 
-Currently, two official plugins are available:
+## Editing content
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+All text, links and lists live in **`src/data/portfolio.js`**. Edit that file only;
+components read from it. The page `<title>`, meta description, Open Graph/Twitter tags
+and JSON-LD are generated from the same file at build time (see `vite.config.js`).
 
-## React Compiler
+Search the data file for `[CONFIRM` to find details that still need checking.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Styling
 
-## Expanding the Oxlint configuration
+- `src/styles/tokens.css` — colours (light + dark), fonts, spacing.
+- `src/styles/global.css` — layout and section styles.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Commands
+
+```bash
+npm install
+npm run dev      # local dev server
+npm run build    # production build into dist/
+npm run preview  # serve the production build
+npm run lint
+```
+
+`public/og.png` is the social share image (1200×630); regenerate it if the headline changes.
