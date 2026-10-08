@@ -6,8 +6,13 @@
     <!-- Title, description, Open Graph, Twitter and JSON-LD are injected from
          src/data/portfolio.js by the seo plugin in vite.config.js. -->
     <!--seo-->
-    <meta name="theme-color" content="#F4F6F8" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0E121B" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#F8FAFC" />
+    <!-- Light by default; apply a saved dark-mode choice before first paint. -->
+    <script>
+      try {
+        if (localStorage.getItem("theme") === "dark") document.documentElement.dataset.theme = "dark";
+      } catch (e) {}
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -1,5 +1,8 @@
 import { codeCard } from "../data/portfolio.js";
 
+// Total time for the JSON to "type in" on first load (CSS does the animating).
+const TYPE_MS = 1200;
+
 function Value({ value }) {
   if (Array.isArray(value)) {
     return (
@@ -23,8 +26,16 @@ function Value({ value }) {
 
 export default function CodeCard() {
   const entries = Object.entries(codeCard.body);
+  const lineCount = entries.length + 2;
+  const step = TYPE_MS / lineCount;
+  const line = (i) => ({ className: "code-line", style: { "--d": `${Math.round(i * step)}ms`, "--t": `${Math.round(step)}ms` } });
+
   return (
-    <figure className="code-card" aria-label="Developer profile shown as a JSON API response">
+    <figure
+      className="code-card"
+      aria-label="Developer profile shown as a JSON API response"
+      style={{ "--type-total": `${TYPE_MS}ms` }}
+    >
       <div className="code-bar">
         <span className="code-dots" aria-hidden="true">
           <i /> <i /> <i />
@@ -36,19 +47,22 @@ export default function CodeCard() {
       </div>
       <pre className="code-body">
         <code>
-          <span className="tok-punct">{"{"}</span>
-          {"\n"}
+          <span {...line(0)}>
+            <span className="tok-punct">{"{"}</span>
+          </span>
           {entries.map(([key, value], i) => (
-            <span key={key} className="code-line">
+            <span key={key} {...line(i + 1)}>
               {"  "}
               <span className="tok-key">"{key}"</span>
               <span className="tok-punct">: </span>
               <Value value={value} />
               {i < entries.length - 1 && <span className="tok-punct">,</span>}
-              {"\n"}
             </span>
           ))}
-          <span className="tok-punct">{"}"}</span>
+          <span {...line(lineCount - 1)}>
+            <span className="tok-punct">{"}"}</span>
+            <span className="code-cursor" aria-hidden="true" />
+          </span>
         </code>
       </pre>
     </figure>

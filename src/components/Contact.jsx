@@ -7,12 +7,12 @@ export default function Contact() {
   const tel = person.phone.replace(/\s+/g, "");
   return (
     <section id="contact" className="section" aria-labelledby="contact-title">
-      <div className="container">
+      <div className="container" data-reveal>
         <div className="contact">
           <div className="contact-copy">
             <h2 id="contact-title">{contact.heading}</h2>
             <p>{contact.text}</p>
-            <ExternalLink className="btn btn-invert" href={person.resume}>
+            <ExternalLink className="btn btn-primary" href={person.resume}>
               <Icon name="download" size={16} />
               Download resume
             </ExternalLink>

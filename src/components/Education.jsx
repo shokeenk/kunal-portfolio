@@ -4,7 +4,7 @@ import TimelineRow from "./TimelineRow.jsx";
 
 export default function Education() {
   return (
-    <Section id="education" title="Education & leadership">
+    <Section id="education" title="Education & leadership" alt>
       <ol className="timeline">
         {education.map((e) => (
           <TimelineRow key={e.title} period={e.period}>

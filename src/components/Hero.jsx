@@ -3,6 +3,18 @@ import CodeCard from "./CodeCard.jsx";
 import ExternalLink from "./ExternalLink.jsx";
 import Icon from "./Icon.jsx";
 
+function Headline() {
+  const i = hero.highlight ? hero.headline.indexOf(hero.highlight) : -1;
+  if (i < 0) return hero.headline;
+  return (
+    <>
+      {hero.headline.slice(0, i)}
+      <mark className="hl">{hero.highlight}</mark>
+      {hero.headline.slice(i + hero.highlight.length)}
+    </>
+  );
+}
+
 export default function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
@@ -12,7 +24,9 @@ export default function Hero() {
             <span className="pulse" aria-hidden="true" />
             {hero.badge}
           </p>
-          <h1 id="hero-title">{hero.headline}</h1>
+          <h1 id="hero-title">
+            <Headline />
+          </h1>
           <p className="hero-intro">{hero.intro}</p>
           <div className="cta-row">
             <a className="btn btn-primary" href={hero.primaryCta.href}>

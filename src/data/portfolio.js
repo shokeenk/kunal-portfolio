@@ -49,6 +49,8 @@ export const hero = {
     "Full-stack developer who ships Java, Spring Boot and React products to real clients.",
   intro:
     "I'm Kunal, an MCA graduate from JIMS. Alongside my degree I built and deployed two production websites for paying clients, including a full e-commerce and booking platform with OAuth login, payments and an admin dashboard. I like owning a feature end to end, from the database schema to the deploy.",
+  // Words in the headline that get the highlighter underline (must match exactly).
+  highlight: "Java, Spring Boot and React",
   primaryCta: { label: "See my work", href: "#experience" },
   resumeCta: { label: "Download resume" },
 };
@@ -119,7 +121,10 @@ export const experience = [
   },
 ];
 
-// `github: null` hides the link on the card.
+// Filter chips shown above the project grid ("All" is added automatically).
+export const projectFilters = ["Full-stack", "Hackathon", "Academic"];
+
+// `categories` drive the filter chips. `github` / `live`: null hides that button.
 export const projects = [
   {
     tag: "Full-stack · MCA",
@@ -127,7 +132,9 @@ export const projects = [
     description:
       "Online medicine-ordering platform. Users browse medicines, place and track orders; JWT-secured REST APIs for catalogue, cart and orders.",
     tech: ["Spring Boot", "React", "MySQL", "JWT"],
+    categories: ["Full-stack", "Academic"],
     github: null,
+    live: null,
   },
   {
     tag: "Full-stack · MCA",
@@ -135,7 +142,9 @@ export const projects = [
     description:
       "Secure journaling application with user accounts and JWT-based authentication so users can only access their own entries.",
     tech: ["Spring Boot", "React", "MongoDB", "JWT"],
+    categories: ["Full-stack", "Academic"],
     github: null,
+    live: null,
   },
   {
     tag: "Hackathon · ISRO BAH 2026",
@@ -143,7 +152,9 @@ export const projects = [
     description:
       "AI-powered framework for detecting lunar water ice using Chandrayaan-2 radar and optical imagery, submitted to ISRO's Bharatiya Antariksh Hackathon 2026.",
     tech: ["AI/ML", "Remote sensing", "Research"],
+    categories: ["Hackathon"],
     github: null,
+    live: null,
   },
   {
     tag: "Systems design · MCA",
@@ -151,7 +162,9 @@ export const projects = [
     description:
       "Systems-design report modelling a retail billing workflow end to end, with Level 0 and Level 1 DFDs produced as clean SVGs.",
     tech: ["System design", "DFD", "Documentation"],
+    categories: ["Academic"],
     github: null,
+    live: null,
   },
 ];
 
@@ -163,6 +176,14 @@ export const skills = [
   { group: "Deploy & tools", items: ["Git", "GitHub", "Render", "Vercel", "IntelliJ IDEA"] },
   { group: "Fundamentals", items: ["Data structures & algorithms", "OOP", "DBMS"] },
 ];
+
+// Hovering/tapping a skill highlights every job and project whose tech tags
+// match. A skill matches a tag with the same name; list extra tags here when
+// the names differ. Skills that match nothing are shown as plain chips.
+export const skillMatches = {
+  Java: ["Spring Boot"],
+  "JWT auth": ["JWT"],
+};
 
 export const education = [
   {

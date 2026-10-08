@@ -25,22 +25,27 @@ export default function CopyButton({ value, label }) {
 
   useEffect(() => {
     if (!copied) return;
-    const t = setTimeout(() => setCopied(false), 2000);
+    const t = setTimeout(() => setCopied(false), 1800);
     return () => clearTimeout(t);
   }, [copied]);
 
   return (
-    <button
-      type="button"
-      className="copy-btn"
-      onClick={async () => setCopied(await copyText(value))}
-    >
-      <Icon name={copied ? "check" : "copy"} size={14} />
-      <span aria-hidden="true">{copied ? "Copied" : "Copy"}</span>
-      <span className="visually-hidden">{`Copy ${label}`}</span>
-      <span className="visually-hidden" role="status">
-        {copied ? `${label} copied` : ""}
+    <span className="copy-wrap">
+      <button type="button" className="copy-btn" onClick={async () => setCopied(await copyText(value))}>
+        <Icon name="copy" size={14} />
+        <span aria-hidden="true">Copy</span>
+        <span className="visually-hidden">{`Copy ${label}`}</span>
+      </button>
+      <span className={`toast ${copied ? "is-visible" : ""}`} role="status">
+        {copied ? (
+          <>
+            Copied <span aria-hidden="true">✓</span>
+            <span className="visually-hidden">{` ${label}`}</span>
+          </>
+        ) : (
+          ""
+        )}
       </span>
-    </button>
+    </span>
   );
 }
