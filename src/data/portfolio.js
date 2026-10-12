@@ -23,7 +23,7 @@ export const person = {
   email: "shokeenk14@gmail.com",
   phone: "+91 70114 67765",
   resume:
-    "https://drive.google.com/file/d/19Z4YRhnmouYZDqSi0A3dKObBTrJ-rXDP/view?usp=sharing",
+    "https://drive.google.com/file/d/1Nkn8VNcawubsxi2gR4HtbQxdybkyGcbq/view?usp=sharing",
   links: [
     { label: "GitHub", icon: "github", href: "https://github.com/shokeenk" },
     {
